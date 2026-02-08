@@ -1,1 +1,207 @@
-# Purpose-Day
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Ayushi ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    } 
+      .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 520px;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .heart {
+      font-size: 40px;
+      animation: beat 1s infinite;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    button {
+      margin: 15px;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background: #e91e63;
+      color: white;
+    }
+    button:hover {
+      background: #d81b60;
+    }
+    #response {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #e91e63;
+      display: none;
+    }
+.photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 20px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Yes animation */
+#response {
+  animation: popFade 1s ease forwards;
+}
+
+@keyframes popFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Floating hearts */
+.heart-float {
+  position: fixed;
+  bottom: 0;
+  font-size: 24px;
+  animation: floatUp 4s linear forwards;
+  color: #e91e63;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+} 
+
+
+  </style>
+</head>
+<body>
+ 
+ <audio id="bgmusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+
+<div class="card">
+  <div class="heart">❤️</div>
+
+  <h1>Hey Ayushi</h1>
+<img src="parth.jpg" alt="Ayushi" class="photo">
+
+
+  <p>
+    I don’t know exactly when it happened,<br>
+    but somewhere between our conversations,<br>
+    you became the person I smile about the most.
+  </p>
+
+  <p>
+    You make simple moments feel special,<br>
+    and honestly… life feels better with you in it.
+  </p>
+
+ <p>
+    The way you talk, the way you smile,<br>
+    even the smallest things about you matter to me more than you know.
+  </p>
+
+  <p>
+    Some people feel like home,<br>
+    and somehow… you became that feeling for me.
+  </p>
+
+  <p>
+    With you, even silence feels comfortable,<br>
+    and every moment feels a little more beautiful.
+  </p>
+
+  <p>
+    Ayushi, I don’t promise perfection,<br>
+    but I promise honesty, care, respect,<br>
+    and a heart that chooses you every day.
+  </p>
+
+  <h2>So Ayushi, I just want to ask you one thing…</h2>
+
+  <h1>Will you be my girlfriend? 💖</h1>
+
+<div id="buttons">
+  <button onclick="sayYes()">Yes ❤️</button>
+  <button onclick="sayYes()">Always Yes 😄</button>
+</div>
+
+<div id="response">
+  Thank you Ayushi… you just made me the happiest person 💕
+</div>
+
+  
+</div>
+ <script>
+function sayYes() {
+  const response = document.getElementById("response");
+  response.style.display = "block";
+
+  document.getElementById("buttons").style.display = "none";
+
+  const music = document.getElementById("bgmusic");
+  music.volume = 0.7;
+
+  music.play().catch(err => {
+    alert("Tap once anywhere on screen to start music ❤️");
+  });
+
+  for (let i = 0; i < 20; i++) {
+    createHeart();
+  }
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart-float";
+  heart.innerHTML = "❤️";
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 5000);
+}
+</script>
+
+
+  
+
+</body>
+</html>
+
